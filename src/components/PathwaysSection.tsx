@@ -42,9 +42,9 @@ const PathwaysSection = () => {
   ];
 
   return (
-    <section className="py-20 px-4">
+    <section className="py-20 px-4 animate-fade-in">
       <div className="container mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-scale-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
             Choose Your Path
           </h2>
@@ -55,9 +55,9 @@ const PathwaysSection = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {pathways.map((pathway, index) => (
-            <Card key={index} className="h-full">
+            <Card key={index} className="h-full hover-scale transition-all duration-300 hover:shadow-lg animate-fade-in" style={{animationDelay: `${index * 200}ms`}}>
               <CardHeader className="text-center">
-                <div className="text-4xl mb-4">{pathway.icon}</div>
+                <div className="text-4xl mb-4 hover-scale transition-transform duration-300">{pathway.icon}</div>
                 <CardTitle className="text-xl">{pathway.title}</CardTitle>
                 <CardDescription className="text-base">
                   {pathway.description}
@@ -72,7 +72,7 @@ const PathwaysSection = () => {
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full">
+                <Button className="w-full hover-scale transition-all duration-300 hover:shadow-md">
                   {pathway.buttonText}
                 </Button>
               </CardContent>
